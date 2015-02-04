@@ -21,11 +21,15 @@ import os
 import pkgutil
 import traceback
 
+try:
+  import json
+except ImportError:
+  import simplejson as json
+
 from google.appengine.api import users
 from google.appengine.ext import webapp
 
 # Relative imports
-import simplejson
 import util
 
 
@@ -125,13 +129,13 @@ class _BaseRpcHandler(webapp.RequestHandler):
     self.json_response = {}
     try:
       self.handle()
-      output = simplejson.dumps(self.json_response, cls=util.JsonEncoder)
+      output = json.dumps(self.json_response, cls=util.JsonEncoder)
     except Exception, e:
       self.json_response.clear()
       self.json_response['error_class'] = e.__class__.__name__
       self.json_response['error_message'] = str(e)
       self.json_response['error_traceback'] = traceback.format_exc()
-      output = simplejson.dumps(self.json_response, cls=util.JsonEncoder)
+      output = json.dumps(self.json_response, cls=util.JsonEncoder)
 
     self.response.set_status(200)
     self.response.headers['Content-Type'] = 'application/json'

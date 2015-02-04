@@ -7,6 +7,11 @@ import os
 import sys
 import unittest
 
+try:
+  import json
+except ImportError:
+  import simplejson as json
+
 # Fix up paths for running tests.
 sys.path.insert(0, "../")
 
@@ -21,7 +26,7 @@ class JsonSerializationTest(unittest.TestCase):
   def testE2e(self):
     now = datetime.datetime.now()
     obj = {"a": 1, "b": [{"c": "d"}], "e": now}
-    new_obj = util.simplejson.loads(util.simplejson.dumps(
+    new_obj = json.loads(json.dumps(
         obj, cls=util.JsonEncoder), cls=util.JsonDecoder)
     self.assertEquals(obj, new_obj)
 

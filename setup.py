@@ -1,4 +1,4 @@
-#!/usr/bin/python2.5
+#!/usr/bin/env python
 """Setup specs for packaging, distributing, and installing Pipeline lib."""
 
 import setuptools
@@ -21,6 +21,5 @@ setuptools.setup(
     exclude_package_data={"": ["README"]},
     install_requires=[
       "GoogleAppEngineCloudStorageClient >= 1.9.15"
-      "simplejson >= 3.6.5",
       ]
 )
