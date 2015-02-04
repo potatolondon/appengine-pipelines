@@ -5,7 +5,7 @@ import setuptools
 
 # To debug, set DISTUTILS_DEBUG env var to anything.
 setuptools.setup(
-    name="GoogleAppEnginePipeline-Potatoified",
+    name="GoogleAppEnginePipelinePotatoified",
     version="1.9.15.1",
     packages=setuptools.find_packages(),
     author="Google App Engine",
