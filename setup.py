@@ -5,13 +5,13 @@ import setuptools
 
 # To debug, set DISTUTILS_DEBUG env var to anything.
 setuptools.setup(
-    name="GoogleAppEnginePipeline",
+    name="GoogleAppEnginePipeline-Potatoified",
     version="1.9.15.1",
     packages=setuptools.find_packages(),
     author="Google App Engine",
-    author_email="app-engine-pipeline-api@googlegroups.com",
+    author_email="https://github.com/potatolondon/appengine-pipelines.git",
     keywords="google app engine pipeline data processing",
-    url="https://github.com/GoogleCloudPlatform/appengine-pipelines",
+    url="https://github.com/potatolondon/appengine-pipelines.git",
     license="Apache License 2.0",
     description=("Enable asynchronous pipeline style data processing on "
                  "App Engine"),
