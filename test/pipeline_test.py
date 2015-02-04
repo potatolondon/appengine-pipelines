@@ -30,7 +30,7 @@ import urllib
 import urlparse
 
 # Fix up paths for running tests.
-sys.path.insert(0, '../src/')
+sys.path.insert(0, '../')
 
 from pipeline import simplejson
 
